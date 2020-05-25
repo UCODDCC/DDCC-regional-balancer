@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  regional_balancer:
+    container_name: regional_balancer
+    image: regional_balancer:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - 0.0.0.0:7655:7655/tcp
